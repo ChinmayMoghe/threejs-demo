@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -11,6 +12,9 @@ module.exports = {
   },
   devtool: "source-map",
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [{ from: path.resolve(__dirname, "../static") }],
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../src/index.html"),
     }),
