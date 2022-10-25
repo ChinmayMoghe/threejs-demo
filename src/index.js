@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as dat from "lil-gui";
 import { getDevicePixelRatio } from "./utils";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 
 /**
  * Canvas
@@ -77,6 +78,16 @@ function resizeListener() {
 }
 
 window.addEventListener("resize", resizeListener);
+
+/**
+ * Font
+ */
+
+const fontLoader = new FontLoader();
+
+fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
+  console.log(" loaded:", font);
+});
 
 /**
  * Animate
