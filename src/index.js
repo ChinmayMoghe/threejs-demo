@@ -185,16 +185,16 @@ const getMeshMaterial = (i) => {
   }
 };
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 250; i++) {
   const mesh = new THREE.Mesh(getMeshGeometry(i), getMeshMaterial(i));
-  mesh.position.x = (Math.random() - 0.5) * 10;
-  mesh.position.y = (Math.random() - 0.5) * 10;
-  mesh.position.z = (Math.random() - 0.5) * 10;
+  mesh.position.x = (Math.random() - 0.5) * 30;
+  mesh.position.y = (Math.random() - 0.5) * 20;
+  mesh.position.z = (Math.random() - 0.5) * 20;
 
   mesh.rotation.x = Math.random() * Math.PI;
   mesh.rotation.y = Math.random() * Math.PI;
 
-  const scale = Math.max(Math.random(), 0.3);
+  const scale = Math.max(Math.random(), 0.1);
   mesh.scale.set(scale, scale, scale);
   scene.add(mesh);
 }
